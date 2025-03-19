@@ -1,0 +1,12 @@
+Poblématiques applicatives :
+- idées 1 : faire un modèle qui identifie la langue d'un mot, text, paragraphe numérique.
+- idées 2 : faire un modèle qui repère les emotions prédominantes sur un visage humain.
+- idées 3 :  faire un modèle qui reconnait les differents drapeaux des pays.
+
+repository git : https://github.com/r-palmier/IABD2-PA
+
+pistes de constitution du dataset:
+- 1 : donner au modèle des screenshot de dictinonaire.
+- 2 : prendre sur internet des samples de visages humains avec des emotions choisies.
+- 3 : prendre sur internet des samples de drapeau dans des jeux, lieu, site, ect ...
+

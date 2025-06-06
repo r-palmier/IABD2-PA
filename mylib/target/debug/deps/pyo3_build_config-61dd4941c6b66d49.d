@@ -1,0 +1,14 @@
+C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\deps\libpyo3_build_config-61dd4941c6b66d49.rmeta: C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\lib.rs C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\errors.rs C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\impl_.rs C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config-file.txt C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config.txt
+
+C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\deps\libpyo3_build_config-61dd4941c6b66d49.rlib: C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\lib.rs C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\errors.rs C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\impl_.rs C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config-file.txt C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config.txt
+
+C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\deps\pyo3_build_config-61dd4941c6b66d49.d: C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\lib.rs C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\errors.rs C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\impl_.rs C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config-file.txt C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config.txt
+
+C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\lib.rs:
+C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\errors.rs:
+C:\Users\Robin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\pyo3-build-config-0.21.2\src\impl_.rs:
+C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config-file.txt:
+C:\Users\Robin\Documents\Code\autres\IABD2-PA\mylib\target\debug\build\pyo3-build-config-84a7e0a7348d6a2b\out/pyo3-build-config.txt:
+
+# env-dep:CARGO_PKG_VERSION=0.21.2
+# env-dep:OUT_DIR=C:\\Users\\Robin\\Documents\\Code\\autres\\IABD2-PA\\mylib\\target\\debug\\build\\pyo3-build-config-84a7e0a7348d6a2b\\out

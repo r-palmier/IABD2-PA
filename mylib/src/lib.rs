@@ -60,6 +60,110 @@ impl Perceptron {
     }
 }
 
+<<<<<<< HEAD
+=======
+/// Simplified linear Support Vector Machine
+#[pyclass]
+pub struct LinearSVM {
+    weights: Option<Array1<f32>>, // weight vector
+    bias: f32,
+}
+
+#[pymethods]
+impl LinearSVM {
+    #[new]
+    fn new() -> Self {
+        Self {
+            weights: None,
+            bias: 0.0,
+        }
+    }
+
+    /// Train the SVM with a simplified QP solution
+    fn fit(&mut self, x: Vec<Vec<f32>>, y: Vec<f32>) -> PyResult<()> {
+        if x.is_empty() || y.is_empty() {
+            return Err(PyErr::new::<pyo3::exceptions::PyValueError, _>(
+                "Empty training data",
+            ));
+        }
+        if x.len() != y.len() {
+            return Err(PyErr::new::<pyo3::exceptions::PyValueError, _>(
+                "Input size mismatch",
+            ));
+        }
+
+        let n_samples = x.len();
+        let n_features = x[0].len();
+
+        // Build ndarray matrices
+        let x_flat: Vec<f32> = x.into_iter().flatten().collect();
+        let x_mat = Array2::from_shape_vec((n_samples, n_features), x_flat)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(format!("{}", e)))?;
+        let y_arr = Array1::from_vec(y);
+
+        // Gram matrix for the dual
+        let mut q = x_mat.dot(&x_mat.t());
+        for i in 0..n_samples {
+            for j in 0..n_samples {
+                q[[i, j]] *= y_arr[i] * y_arr[j];
+            }
+        }
+        // small regularization to ensure invertibility
+        let lambda = 1e-6f32;
+        for i in 0..n_samples {
+            q[[i, i]] += lambda;
+        }
+
+        let ones = Array1::<f32>::ones(n_samples);
+        let q_inv = q.inv().map_err(|e| {
+            PyErr::new::<pyo3::exceptions::PyValueError, _>(format!("{}", e))
+        })?;
+        let alpha = q_inv.dot(&ones);
+
+        // Compute weight vector
+        let mut w = Array1::<f32>::zeros(n_features);
+        for i in 0..n_samples {
+            let coeff = alpha[i] * y_arr[i];
+            let row = x_mat.row(i);
+            w = w + &row * coeff;
+        }
+
+        // Estimate bias using support vectors
+        let mut bias_sum = 0.0f32;
+        let mut count = 0usize;
+        for i in 0..n_samples {
+            if alpha[i].abs() > 1e-4 {
+                let val = y_arr[i] - w.dot(&x_mat.row(i));
+                bias_sum += val;
+                count += 1;
+            }
+        }
+        let b = if count > 0 { bias_sum / count as f32 } else { 0.0 };
+
+        self.weights = Some(w);
+        self.bias = b;
+        Ok(())
+    }
+
+    fn predict(&self, x: Vec<f32>) -> PyResult<f32> {
+        let w = self.weights.as_ref().ok_or_else(|| {
+            PyErr::new::<pyo3::exceptions::PyValueError, _>("Model not trained")
+        })?;
+
+        if x.len() != w.len() {
+            return Err(PyErr::new::<pyo3::exceptions::PyValueError, _>(
+                "Input dimension mismatch",
+            ));
+        }
+
+        let x_arr = Array1::from_vec(x);
+        let activation = w.dot(&x_arr) + self.bias;
+        Ok(if activation >= 0.0 { 1.0 } else { -1.0 })
+    }
+}
+
+/// Simple Radial Basis Function Network
+>>>>>>> 55837a48825bfef9bb356fe49f86c577ec4d4a48
 #[pyclass]
 #[derive(Default)]
 pub struct RBFN {
@@ -173,6 +277,7 @@ fn mylib(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(sum_vector, m)?)?;
     m.add_function(wrap_pyfunction!(rbf_distance, m)?)?;
     m.add_class::<Perceptron>()?;
+    m.add_class::<LinearSVM>()?;
     m.add_class::<RBFN>()?;
     Ok(())
 }

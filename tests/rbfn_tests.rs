@@ -1,5 +1,5 @@
-use iabd2_pa::models::rbfn::{RBFN};
-
+use iabd2_pa::models::rbfn::RBFN;
+use iabd2_pa::models::model_trait::Model;
 #[test]
 fn test_rbfn_train_and_predict() {
     let mut model = RBFN::new(3, 1.0, 10);

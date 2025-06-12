@@ -1,9 +1,10 @@
-use iabd2_pa::models::linear_classification::{LinearClassification, Model};
+use iabd2_pa::models::linear_classification::LinearClassification;
+use iabd2_pa::models::model_trait::Model;
 
 #[test]
 fn test_linear_classification_predict_basic() {
     let mut model = LinearClassification::new();
-    model.set_weights(vec![0.5, 1.0, -1.0]);
+    model.set_weights(vec![0.5, 1.0, -1.0]); // biais + poids
     let input_pos = vec![2.0, 1.0];
     let input_neg = vec![1.0, 3.0];
     assert_eq!(model.predict(&input_pos), 1);

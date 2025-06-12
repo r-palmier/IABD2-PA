@@ -1,4 +1,5 @@
-use iabd2_pa::models::mlp::{MLP, Model};
+use iabd2_pa::models::mlp::MLP;
+use iabd2_pa::models::model_trait::Model;
 
 #[test]
 fn test_mlp_predict_output_length() {
